@@ -8,7 +8,7 @@ export default function Nav() {
   return (
     <div className="fixed top-2 left-0 w-full z-30 bg-sky text-paper">
       <div className="max-w-[830px] mx-auto flex items-center justify-between px-5 py-2">
-        <Link href="/">
+        <Link href="https://eigenai.com">
           <img
             src="/images/full_logo.svg"
             alt="Eigen AI Logo"

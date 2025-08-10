@@ -28,7 +28,10 @@ git push
 - After `git push`, the repo will be compiled and deployed automatically. HTML and all the files of the website will be in the `gh-pages` branch.
 
 ## Add Blog Posts
-Add a markdown file to `/blog` for it to be added in the blog feed. Make sure your frontmatter contains the entries `title`, `author`, `date`, `previewImg`, and/or `url`.
+- Add a markdown file to `/blog` for it to be added in the blog feed. 
+  - Make sure your frontmatter contains the entries `title`, `author`, `date`, `previewImg`, and/or `url`. 
+  - `url` should be used only when there is no local post and will use a hyperlink instead.
+- Put the images that will be used for the post in the corresponding folder under the path `public/images/blog`.
 
 ## Acknowledgement
 The website is modified from [laion.ai](https://github.com/LAION-AI/laion.ai.git), fully respecting [their license](https://github.com/LAION-AI/laion.ai/blob/main/LICENSE).

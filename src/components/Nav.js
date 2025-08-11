@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Nav() {
   return (
-    <div className="fixed top-2 left-0 w-full z-30 bg-sky text-paper">
+    <div className="fixed top-0 left-0 w-full z-30 bg-sky text-paper">
       <div className="max-w-[830px] mx-auto flex items-center justify-between px-5 py-2">
         <Link href="https://eigenai.com">
           <img

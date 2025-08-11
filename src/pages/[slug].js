@@ -18,7 +18,7 @@ export default function Post({ frontmatter, content, slug }) {
         <h1
           lang="en"
           style={{ hyphens: "auto" }}
-          className="text-8xl md:text-8xl w-full font-bold title-flow break-words"
+          className="text-4xl md:text-4xl w-full font-bold title-flow break-words"
         >
           {frontmatter.title.toUpperCase()}
         </h1>

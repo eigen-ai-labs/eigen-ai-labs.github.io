@@ -7,7 +7,7 @@ import dateFormat from "dateformat";
 import ExportedImage from "next-image-export-optimizer";
 
 // Reusable component for blog post preview
-const BlogPostPreview = ({ frontmatter, content, date }) => {
+const BlogPostPreview_url = ({ frontmatter, content, date }) => {
   let cont = md()
     .render(content)
     .replace(/<[^>]+>/g, "");
@@ -39,6 +39,40 @@ const BlogPostPreview = ({ frontmatter, content, date }) => {
   );
 };
 
+const BlogPostPreview = ({ frontmatter, content, date, slug }) => {
+  let cont = md()
+    .render(content)
+    .replace(/<[^>]+>/g, "");
+
+  if (cont.length > 300) {
+    cont = cont.slice(0, 300) + "...";
+  }
+
+  return (
+    <Link href={"/" + slug} key={slug}>
+      <div className="border mb-5 hover:bg-[#1B3D6D] hover:text-sky transition-colors cursor-pointer bg-sky border-paper flex flex-col lg:flex-row items-stretch shadow-lg shadow-neutral-800/20">
+        <div className="basis-1/2 team-wrap">
+          <ExportedImage
+            src={frontmatter.previewImg}
+            alt={frontmatter.title}
+            layout="responsive"
+            width={1600}
+            height={900}
+          />
+        </div>
+        <div className="p-5 basis-4/5">
+          <p className="text-lg font-bold">{frontmatter.title}</p>
+          <p className="text-[0.95rem] pb-1">
+            by: {frontmatter.author}, {dateFormat(date, "dd mmm, yyyy")}
+          </p>
+          <hr />
+          <p className="pt-2">{cont}</p>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 export default function Home({ posts }) {
   return (
     <div className="w-full flex justify-center pt-16 md:pt-2">
@@ -61,15 +95,13 @@ export default function Home({ posts }) {
                 rel="noopener noreferrer"
                 className="block external-blog-post-link"
               >
-                <BlogPostPreview frontmatter={frontmatter} content={content} date={date} />
+                <BlogPostPreview_url frontmatter={frontmatter} content={content} date={date} />
               </a>
             );
           } else {
             // Internal link: use Next.js Link
             return (
-              <Link key={slug} href={"/blog/" + slug}>
-                <BlogPostPreview frontmatter={frontmatter} content={content} date={date} />
-              </Link>
+              <BlogPostPreview frontmatter={frontmatter} content={content} date={date} slug={slug} />
             );
           }
         })}

@@ -22,7 +22,7 @@ export default function Post({ frontmatter, content, slug }) {
         >
           {frontmatter.title}
         </h1>
-        <p className="text-2xl pt-2 pb-2">
+        <p className="text-lg pt-2 pb-2">
           by: {frontmatter.author},{" "}
           {dateFormat(frontmatter.date, "dd mmm, yyyy")}
         </p>

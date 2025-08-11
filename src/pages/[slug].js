@@ -17,8 +17,7 @@ export default function Post({ frontmatter, content, slug }) {
       <div className="container px-5" lang="en">
         <h1
           lang="en"
-          style={{ hyphens: "auto" }}
-          className="text-3xl md:text-3xl w-full font-bold title-flow break-words"
+          className="text-3xl md:text-3xl w-full font-bold title-flow"
         >
           {frontmatter.title}
         </h1>

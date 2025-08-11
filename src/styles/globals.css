@@ -79,8 +79,11 @@ div {
 
 @media (max-width: 415px) {
   .title-flow {
-    font-size: 1.5rem;
-    line-height: 1.2;
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
   }
 }
 

@@ -79,7 +79,8 @@ div {
 
 @media (max-width: 415px) {
   .title-flow {
-    font-size: 22vw;
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 }
 

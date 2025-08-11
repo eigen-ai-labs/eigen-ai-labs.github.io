@@ -49,7 +49,7 @@ const BlogPostPreview = ({ frontmatter, content, date, slug }) => {
   }
 
   return (
-    <Link href={"/" + slug} key={slug}>
+    <Link href={"/" + slug}>
       <div className="border mb-5 hover:bg-[#1B3D6D] hover:text-sky transition-colors cursor-pointer bg-sky border-paper flex flex-col lg:flex-row items-stretch shadow-lg shadow-neutral-800/20">
         <div className="basis-1/2 team-wrap">
           <ExportedImage
@@ -99,9 +99,15 @@ export default function Home({ posts }) {
               </a>
             );
           } else {
-            // Internal link: use Next.js Link
+            // Internal link: use Next.js Link with key on BlogPostPreview
             return (
-              <BlogPostPreview frontmatter={frontmatter} content={content} date={date} slug={slug} />
+              <BlogPostPreview
+                key={slug}
+                frontmatter={frontmatter}
+                content={content}
+                date={date}
+                slug={slug}
+              />
             );
           }
         })}

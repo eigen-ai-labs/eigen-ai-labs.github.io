@@ -18,11 +18,11 @@ export default function Post({ frontmatter, content, slug }) {
         <h1
           lang="en"
           style={{ hyphens: "auto" }}
-          className="text-4xl md:text-4xl w-full font-bold title-flow break-words"
+          className="text-3xl md:text-3xl w-full font-bold title-flow break-words"
         >
-          {frontmatter.title.toUpperCase()}
+          {frontmatter.title}
         </h1>
-        <p className="text-2xl pb-2">
+        <p className="text-2xl pt-2 pb-2">
           by: {frontmatter.author},{" "}
           {dateFormat(frontmatter.date, "dd mmm, yyyy")}
         </p>
